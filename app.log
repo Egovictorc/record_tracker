@@ -1,0 +1,12 @@
+2022-08-28 00:07:47 INFO  Started Senior Citizen record tracker Aplication Senior Citizen's Record Tracker
+2022-08-28 00:08:22 INFO  HHH000412: Hibernate ORM core version [WORKING]
+2022-08-28 00:08:23 WARN  HHH10001002: Using built-in connection pool (not intended for production use)
+2022-08-28 00:08:23 INFO  HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2022-08-28 00:08:23 INFO  HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/citizens?createDatabaseIfNotExist=true]
+2022-08-28 00:08:23 INFO  HHH10001001: Connection properties: {password=****, user=root}
+2022-08-28 00:08:23 INFO  HHH10001003: Autocommit mode: false
+2022-08-28 00:08:23 INFO  HHH10001115: Connection pool size: 20 (min=1)
+2022-08-28 00:08:23 INFO  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-08-28 00:08:24 INFO  HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@776c1a4c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-08-28 00:08:24 INFO  HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-28 00:08:24 INFO  registered new person : Person(uuid=8e9ac12a-def6-4ea3-80c3-56b8d80d0e2a, firstName=asdasdas, lastName=asdas, town=asdas, email=sdfsd, lga=asdas, gender=MALE, dateOfBirth=2022-08-15, dateOfReg=2022-08-28T00:08:22.649446100)

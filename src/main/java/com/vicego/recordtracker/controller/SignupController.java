@@ -3,6 +3,7 @@ package com.vicego.recordtracker.controller;
 import com.vicego.recordtracker.SeniorCitizenApplication;
 import com.vicego.recordtracker.entity.Person;
 import com.vicego.recordtracker.util.AppUtil;
+import com.vicego.recordtracker.util.HibernateUtil;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXRadioButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -44,17 +45,21 @@ public class SignupController {
         String firstName = fname.getText();
         String lastName = lname.getText();
         String _email = email.getText();
+        String _password = password.getText();
+        String _confirmPassword = confirmPassword.getText();
         String _town = town.getText();
         String _lga = lga.getText();
         LocalDate _dob = dob.getValue();
-        String _gender = ((MFXRadioButton)gender.getSelectedToggle()).getText().toUpperCase(Locale.ROOT);
-        if(firstName.isBlank() || lastName.isBlank() || _email.isBlank() || _town.isBlank() || _lga.isBlank() || _gender.isBlank() ) {
+        String _gender = ((MFXRadioButton) gender.getSelectedToggle()).getText().toUpperCase(Locale.ROOT);
+        if (firstName.isBlank() || lastName.isBlank() || _password.isBlank() || _confirmPassword.isBlank() || _email.isBlank() || _town.isBlank() || _lga.isBlank() || _gender.isBlank()) {
             AppUtil.showAlert("Incomplete Details", "Please enter all values!!!");
             System.out.println("Please enter all details");
+        } else if (!_password.equals(_confirmPassword)) {
+            AppUtil.showAlert("Data Mismatch", "Data mismatch for password!!!");
         } else {
             Person person = new Person(firstName, lastName, _town, _email, _lga, Person.Gender.valueOf(_gender), _dob, LocalDateTime.now(Clock.systemDefaultZone()));
+            HibernateUtil.savePerson(person);
             log.info("registered new person : {}", person);
-            System.out.println(person);
         }
 
         // register record to database

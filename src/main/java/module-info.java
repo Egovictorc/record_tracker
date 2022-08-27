@@ -9,9 +9,15 @@ module com.vicego.recordtracker {
     requires lombok;
     requires org.slf4j;
     requires MaterialFX;
+    requires org.hibernate.orm.core;
+    requires org.hibernate.commons.annotations;
+    requires jakarta.persistence;
+    requires java.naming;
+    requires jakarta.activation;
     //requires eu.hansolo.tilesfx;
 
     opens com.vicego.recordtracker to javafx.fxml;
+    opens com.vicego.recordtracker.entity to org.hibernate.orm.core;
     exports com.vicego.recordtracker;
 
     exports com.vicego.recordtracker.controller;
