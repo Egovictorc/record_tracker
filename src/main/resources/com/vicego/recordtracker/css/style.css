@@ -1,0 +1,10 @@
+.btn {
+    -fx-background-color: transparent;
+}
+.primary-bg {
+    -fx-background-color: dodgerblue;
+    -fx-text-fill: #fff;
+}
+.primary {
+    -fx-text-fill: dodgerblue;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.vicego.recordtracker.controller.WelcomeController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="Welcome to Senior Citizen's Record Tracker">
+      <font>
+         <Font size="32.0" />
+      </font></Label>
+   <Label contentDisplay="TOP" text="Please wait...">
+      <font>
+         <Font size="18.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../icons/progress_bar.gif" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Label>
+</VBox>
