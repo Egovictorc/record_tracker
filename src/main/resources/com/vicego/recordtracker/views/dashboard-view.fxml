@@ -2,7 +2,6 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
-<?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -42,6 +41,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MFXButton>
+            <MFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onMenuButtonClick" styleClass="primary" text="Contact us">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
             <MFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onMenuButtonClick" styleClass="primary" text="Sign out">
                <font>
                   <Font size="22.0" />
@@ -62,7 +69,15 @@
                <Font size="24.0" />
             </font>
          </Label>
-         <GridPane alignment="CENTER" hgap="5.0" minHeight="215.0" minWidth="500.0" prefHeight="215.0" prefWidth="515.0" vgap="10.0">
+         <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Welcome John Okoro">
+            <font>
+               <Font size="24.0" />
+            </font>
+            <padding>
+               <Insets left="5.0" />
+            </padding>
+         </Label>
+         <GridPane alignment="CENTER" hgap="5.0" minHeight="215.0" minWidth="500.0" prefHeight="493.0" prefWidth="515.0" vgap="10.0">
            <columnConstraints>
              <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.60003662109375" minWidth="10.0" prefWidth="202.800048828125" />
              <ColumnConstraints hgrow="SOMETIMES" maxWidth="369.199951171875" minWidth="10.0" prefWidth="297.199951171875" />
@@ -72,9 +87,13 @@
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="61.99997558593748" minHeight="10.0" prefHeight="37.19998779296873" vgrow="SOMETIMES" />
            </rowConstraints>
             <children>
-               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Email" GridPane.rowIndex="1">
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Town" GridPane.rowIndex="3">
                   <font>
                      <Font size="24.0" />
                   </font>
@@ -82,7 +101,7 @@
                      <Insets left="5.0" />
                   </padding>
                </Label>
-               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Password" GridPane.rowIndex="2">
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Password" GridPane.rowIndex="7">
                   <font>
                      <Font size="24.0" />
                   </font>
@@ -90,24 +109,11 @@
                      <Insets left="5.0" />
                   </padding>
                </Label>
-               <MFXPasswordField fx:id="password" alignment="TOP_LEFT" floatMode="DISABLED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <MFXPasswordField fx:id="password" alignment="TOP_LEFT" floatMode="DISABLED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                   <font>
                      <Font size="20.0" />
                   </font>
                </MFXPasswordField>
-               <MFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onLoginButtonClick" styleClass="primary-bg" text="Login" GridPane.columnSpan="2" GridPane.rowIndex="3">
-                  <font>
-                     <Font size="22.0" />
-                  </font>
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </MFXButton>
-               <MFXTextField fx:id="email" floatMode="DISABLED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="example@example.com" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                  <font>
-                     <Font size="20.0" />
-                  </font>
-               </MFXTextField>
                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
                   <children>
                      <Label fx:id="currentDate" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Today is: ">
@@ -120,6 +126,94 @@
                      </Label>
                   </children>
                </HBox>
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="First Name" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Last Name" GridPane.rowIndex="2">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Email" GridPane.rowIndex="6">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Date of Birth" GridPane.rowIndex="5">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="LGA" GridPane.rowIndex="4">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="fname" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="dateOfBirth" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="lga" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="town" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="lname" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="email" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
             </children>
             <padding>
                <Insets left="5.0" right="5.0" />
@@ -127,11 +221,11 @@
          </GridPane>
          <HBox alignment="CENTER" prefHeight="38.0" prefWidth="515.0">
             <children>
-               <Label text="Don't have an account?">
+               <Label text="Have any question?">
                   <font>
                      <Font size="16.0" />
                   </font></Label>
-               <MFXButton onAction="#onSignupButtonClick" text="Signup">
+               <MFXButton onAction="#onContactButtonClick" text="contact us">
                   <styleClass>
                      <String fx:value="btn" />
                      <String fx:value="primary" />

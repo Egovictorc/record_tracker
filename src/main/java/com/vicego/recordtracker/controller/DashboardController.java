@@ -14,19 +14,20 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.time.Clock;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @Slf4j
 public class DashboardController {
 
     @FXML
-    Label currentDate;
-    @FXML
-    MFXTextField email;
+    Label currentDate, fname, lname, email, town, lga, dateOfBirth;
     @FXML
     MFXPasswordField password;
 
     public void initialize() {
-        currentDate.setText(currentDate.getText().concat(LocalDateTime.now(Clock.systemDefaultZone()).toString()));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy hh:mm:ssa");
+        currentDate.setText(currentDate.getText().concat(formatter.format(LocalDateTime.now(Clock.systemDefaultZone()))));
     }
 
     public void onLoginButtonClick(ActionEvent actionEvent) {
@@ -54,5 +55,8 @@ public class DashboardController {
                 SeniorCitizenApplication.setRoot("welcome-view");
             }
         }
+    }
+
+    public void onContactButtonClick(ActionEvent actionEvent) {
     }
 }
