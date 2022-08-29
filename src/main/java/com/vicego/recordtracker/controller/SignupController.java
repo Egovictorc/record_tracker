@@ -41,7 +41,7 @@ public class SignupController {
         //SeniorCitizenApplication.setUserAgentStylesheet(String.valueOf(SignupController.class.getResource("css/style.css")));
     }
 
-    public void onSubmitButtonClick(ActionEvent actionEvent) {
+    public void onSubmitButtonClick(ActionEvent actionEvent) throws IOException {
         String firstName = fname.getText();
         String lastName = lname.getText();
         String _email = email.getText();
@@ -57,9 +57,12 @@ public class SignupController {
         } else if (!_password.equals(_confirmPassword)) {
             AppUtil.showAlert("Data Mismatch", "Data mismatch for password!!!");
         } else {
-            Person person = new Person(firstName, lastName, _town, _email, _lga, Person.Gender.valueOf(_gender), _dob, LocalDateTime.now(Clock.systemDefaultZone()));
+            Person person = new Person(firstName, lastName, _password, _town, _email, _lga, Person.Gender.valueOf(_gender), _dob, LocalDateTime.now(Clock.systemDefaultZone()));
             HibernateUtil.savePerson(person);
-            log.info("registered new person : {}", person);
+            //log.info("registered new person : {}", person);
+
+            //go to login page
+            SeniorCitizenApplication.setRoot("login-view");
         }
 
         // register record to database

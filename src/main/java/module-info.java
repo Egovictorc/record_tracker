@@ -16,11 +16,11 @@ module com.vicego.recordtracker {
     requires jakarta.activation;
     //requires eu.hansolo.tilesfx;
 
-    opens com.vicego.recordtracker to javafx.fxml;
+    opens com.vicego.recordtracker to javafx.fxml, org.slf4j, lombok;
     opens com.vicego.recordtracker.entity to org.hibernate.orm.core;
     exports com.vicego.recordtracker;
 
     exports com.vicego.recordtracker.controller;
 
-    opens com.vicego.recordtracker.controller to javafx.base, javafx.fxml;
+    opens com.vicego.recordtracker.controller to javafx.base, javafx.fxml, org.hibernate.orm.core;
 }

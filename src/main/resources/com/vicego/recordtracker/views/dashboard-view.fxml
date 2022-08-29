@@ -7,8 +7,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -16,19 +14,50 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" spacing="20.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vicego.recordtracker.controller.LoginController">
+<HBox alignment="CENTER" spacing="20.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vicego.recordtracker.controller.DashboardController">
    <children>
-      <ImageView fitHeight="534.0" fitWidth="442.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../illustrations/illustration_login.png" />
-         </image>
-      </ImageView>
-      <VBox alignment="CENTER" spacing="20.0">
+      <VBox alignment="CENTER" prefHeight="370.0" prefWidth="237.0" spacing="2.0" styleClass="primary-bg">
+         <children>
+            <MFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onMenuButtonClick" styleClass="primary" text="Dashboard">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onMenuButtonClick" styleClass="primary" text="Update Profile">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onMenuButtonClick" styleClass="primary" text="Settings">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onMenuButtonClick" styleClass="primary" text="Sign out">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" spacing="20.0" HBox.hgrow="ALWAYS">
           <padding>
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
           </padding>
       
-          <Label text="Login Page">
+          <Label text="Dashboard Page">
             <font>
                <Font size="24.0" />
             </font>
@@ -79,14 +108,18 @@
                      <Font size="20.0" />
                   </font>
                </MFXTextField>
-               <Label fx:id="message" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Error: Invalid credential" textFill="#d10a0a" GridPane.columnSpan="2">
-                  <font>
-                     <Font size="24.0" />
-                  </font>
-                  <padding>
-                     <Insets left="5.0" />
-                  </padding>
-               </Label>
+               <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
+                  <children>
+                     <Label fx:id="currentDate" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Today is: ">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding>
+                     </Label>
+                  </children>
+               </HBox>
             </children>
             <padding>
                <Insets left="5.0" right="5.0" />
