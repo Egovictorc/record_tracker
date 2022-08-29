@@ -2,6 +2,7 @@ package com.vicego.recordtracker.controller;
 
 import com.vicego.recordtracker.SeniorCitizenApplication;
 import com.vicego.recordtracker.entity.Person;
+import com.vicego.recordtracker.util.AppUtil;
 import com.vicego.recordtracker.util.HibernateUtil;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -45,6 +46,7 @@ public class LoginController {
                     message.setVisible(true);
 
                     //go to dashboard page
+                    AppUtil.setCurrentPerson(person);
                     SeniorCitizenApplication.setRoot("dashboard-view");
                 } else {
                     message.setText("Login Failed: Bad Credentials");

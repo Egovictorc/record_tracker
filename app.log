@@ -1,12 +1,13 @@
-2022-08-29 14:46:14 INFO  Started Senior Citizen record tracker Aplication Senior Citizen's Record Tracker
-2022-08-29 14:48:39 INFO  HHH000412: Hibernate ORM core version [WORKING]
-2022-08-29 14:48:39 WARN  HHH10001002: Using built-in connection pool (not intended for production use)
-2022-08-29 14:48:39 INFO  HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
-2022-08-29 14:48:39 INFO  HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/citizens?createDatabaseIfNotExist=true]
-2022-08-29 14:48:39 INFO  HHH10001001: Connection properties: {password=****, user=root}
-2022-08-29 14:48:39 INFO  HHH10001003: Autocommit mode: false
-2022-08-29 14:48:39 INFO  HHH10001115: Connection pool size: 20 (min=1)
-2022-08-29 14:48:40 INFO  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-2022-08-29 14:48:40 INFO  HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7372ac46] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2022-08-29 14:48:40 INFO  HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-08-29 14:48:41 INFO  User login success: Person(uuid=23a86dfe-d794-4b01-845a-c0bb3e44bc2f, firstName=uche, lastName=Okoro, password=1234, town=Nnewi, email=uc@gmail.com, lga=Nnewi South, gender=MALE, dateOfBirth=2002-08-12, dateOfReg=2022-08-29T03:49:54.312418)
+2022-08-29 19:44:24 INFO  Started Senior Citizen record tracker Aplication Senior Citizen's Record Tracker
+2022-08-29 19:45:05 INFO  HHH000412: Hibernate ORM core version [WORKING]
+2022-08-29 19:45:06 WARN  HHH10001002: Using built-in connection pool (not intended for production use)
+2022-08-29 19:45:06 INFO  HHH10001005: Loaded JDBC driver class: com.mysql.cj.jdbc.Driver
+2022-08-29 19:45:06 INFO  HHH10001012: Connecting with JDBC URL [jdbc:mysql://localhost:3306/citizens?createDatabaseIfNotExist=true]
+2022-08-29 19:45:06 INFO  HHH10001001: Connection properties: {password=****, user=root}
+2022-08-29 19:45:06 INFO  HHH10001003: Autocommit mode: false
+2022-08-29 19:45:06 INFO  HHH10001115: Connection pool size: 20 (min=1)
+2022-08-29 19:45:06 INFO  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2022-08-29 19:45:07 INFO  HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@40a2650a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-08-29 19:45:07 INFO  HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-29 19:45:41 INFO  User login success: Person(uuid=d31a569d-60b9-495b-a7ad-04df3ca8fbb9, firstName=Evelyn, lastName=Okeke, password=1234, town=onitsha, email=evelyn@gmail.com, lga=Onitsha North, gender=FEMALE, dateOfBirth=2022-08-10, dateOfReg=2022-08-29T19:12:54.855830)
+2022-08-29 19:45:44 INFO  User login success: Person(uuid=d31a569d-60b9-495b-a7ad-04df3ca8fbb9, firstName=Evelyn, lastName=Okeke, password=1234, town=onitsha, email=evelyn@gmail.com, lga=Onitsha North, gender=FEMALE, dateOfBirth=2022-08-10, dateOfReg=2022-08-29T19:12:54.855830)

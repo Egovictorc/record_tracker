@@ -7,15 +7,11 @@ import com.vicego.recordtracker.util.HibernateUtil;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXRadioButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
-import io.github.palexdev.materialfx.controls.MFXToggleButton;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
-import javafx.util.Duration;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -25,7 +21,7 @@ import java.time.LocalDateTime;
 import java.util.Locale;
 
 @Slf4j
-public class SignupController {
+public class UpdateProfileController {
     @FXML
     public MFXTextField fname, lname, town, email, lga;
 
@@ -39,9 +35,10 @@ public class SignupController {
 
     public void initialize() {
         //SeniorCitizenApplication.setUserAgentStylesheet(String.valueOf(SignupController.class.getResource("css/style.css")));
+        setUp();
     }
 
-    public void onSubmitButtonClick(ActionEvent actionEvent) throws IOException {
+    public void onUpdateButtonClick(ActionEvent actionEvent) throws IOException {
         String firstName = fname.getText();
         String lastName = lname.getText();
         String _email = email.getText();
@@ -58,24 +55,31 @@ public class SignupController {
             AppUtil.showAlert("Data Mismatch", "Data mismatch for password!!!");
         } else {
             Person person = new Person(firstName, lastName, _password, _town, _email, _lga, Person.Gender.valueOf(_gender), _dob, LocalDateTime.now(Clock.systemDefaultZone()));
-            try {
-                HibernateUtil.savePerson(person);
-                //go to login page
-                SeniorCitizenApplication.setRoot("login-view");
-            } catch (Exception e) {
-                AppUtil.showAlert("Bad Request", e.getMessage());
-            }
+            HibernateUtil.savePerson(person);
             //log.info("registered new person : {}", person);
 
-
+            //go to login page
+            SeniorCitizenApplication.setRoot("login-view");
         }
 
         // register record to database
     }
 
-    public void onLoginButtonClick(ActionEvent actionEvent) throws IOException {
+    public void onContactButtonClick(ActionEvent actionEvent) throws IOException {
         //go to login page
-        SeniorCitizenApplication.setRoot("login-view");
+        SeniorCitizenApplication.setRoot("contact-view");
     }
-
+    public void setUp() {
+        Person currentPerson = AppUtil.getCurrentPerson();
+        fname.setText(currentPerson.getFirstName());
+        lname.setText(currentPerson.getLastName());
+        email.setText(currentPerson.getEmail());
+        town.setText(currentPerson.getTown());
+        lga.setText(currentPerson.getLga());
+        gender.getToggles().set(1, new MFXRadioButton(currentPerson.getGender().toString()));
+        dob.setValue(currentPerson.getDateOfBirth());
+        password.setText(currentPerson.getPassword());
+        confirmPassword.setText(currentPerson.getPassword());
+        //gender.setText(currentPerson.getGender().toString());
+    }
 }

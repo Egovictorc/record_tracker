@@ -2,6 +2,7 @@ package com.vicego.recordtracker.controller;
 
 import com.vicego.recordtracker.SeniorCitizenApplication;
 import com.vicego.recordtracker.entity.Person;
+import com.vicego.recordtracker.util.AppUtil;
 import com.vicego.recordtracker.util.HibernateUtil;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
@@ -21,13 +22,14 @@ import java.time.format.DateTimeFormatter;
 public class DashboardController {
 
     @FXML
-    Label currentDate, fname, lname, email, town, lga, dateOfBirth;
+    Label currentDate, fname, lname, email, gender, town, lga, dateOfBirth, greeting;
     @FXML
     MFXPasswordField password;
 
     public void initialize() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy hh:mm:ssa");
         currentDate.setText(currentDate.getText().concat(formatter.format(LocalDateTime.now(Clock.systemDefaultZone()))));
+        setUp();
     }
 
     public void onLoginButtonClick(ActionEvent actionEvent) {
@@ -46,7 +48,10 @@ public class DashboardController {
                 SeniorCitizenApplication.setRoot("login-view");
             }
             case "update profile" -> {
-                SeniorCitizenApplication.setRoot("update-profile");
+                SeniorCitizenApplication.setRoot("update-profile-view");
+            }
+            case "contact us" -> {
+                SeniorCitizenApplication.setRoot("contact-view");
             }
             case "settings" -> {
                 SeniorCitizenApplication.setRoot("settings-view");
@@ -58,5 +63,19 @@ public class DashboardController {
     }
 
     public void onContactButtonClick(ActionEvent actionEvent) {
+    }
+
+    public void setUp() {
+        Person currentPerson = AppUtil.getCurrentPerson();
+
+        String fullName = currentPerson.getFirstName().concat(" ").concat(currentPerson.getLastName());
+        greeting.setText(greeting.getText().concat(fullName));
+        fname.setText(currentPerson.getFirstName());
+        lname.setText(currentPerson.getLastName());
+        email.setText(currentPerson.getEmail());
+        town.setText(currentPerson.getTown());
+        lga.setText(currentPerson.getLga());
+        gender.setText(currentPerson.getGender().toString());
+        dateOfBirth.setText(currentPerson.getDateOfBirth().toString());
     }
 }

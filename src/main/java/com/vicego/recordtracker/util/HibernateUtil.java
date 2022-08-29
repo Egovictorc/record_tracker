@@ -1,6 +1,7 @@
 package com.vicego.recordtracker.util;
 
 import com.vicego.recordtracker.entity.Person;
+import com.vicego.recordtracker.exception.UserAlreadyExistException;
 import com.vicego.recordtracker.exception.UserNotFoundException;
 import jakarta.persistence.Query;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -13,6 +14,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.util.UUID;
+
 @Slf4j
 public class HibernateUtil {
     private static SessionFactory sessionFactory = buildSessionFactory();
@@ -47,12 +49,17 @@ public class HibernateUtil {
 
 
     public static void savePerson(Person person) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.persist(person);
-        session.getTransaction().commit();
-        session.close();
-        AppUtil.showAlert("Registration success", "You have registered successfully, \nKindly login!!!");
+        if (!doesUserExist(person.getEmail())) {
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+            session.persist(person);
+            session.getTransaction().commit();
+            session.close();
+        } else {
+            throw new UserAlreadyExistException("User already exists");
+        }
+
+        //AppUtil.showAlert("Registration success", "You have registered successfully, \nKindly login!!!");
     }
 
 
@@ -87,5 +94,17 @@ public class HibernateUtil {
         //log.info("User with email {} not found", email);
         throw new UserNotFoundException("User not found");
     }
+
+    static boolean doesUserExist(String email) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        Query findPersonQuery = session.createQuery("from Person where email = :email", Person.class);
+        findPersonQuery.setParameter("email", email);
+        return findPersonQuery.getSingleResult() != null;
+    }
+   /* public static Person currentUser(String email) {
+        Session session = sessionFactory.getCurrentSession();
+        Person p = session.get(Person.class);
+    }*/
 
 }

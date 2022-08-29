@@ -69,7 +69,7 @@
                <Font size="24.0" />
             </font>
          </Label>
-         <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Welcome John Okoro">
+         <Label fx:id="greeting" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Welcome ">
             <font>
                <Font size="24.0" />
             </font>
@@ -90,6 +90,7 @@
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                <RowConstraints maxHeight="61.99997558593748" minHeight="10.0" prefHeight="37.19998779296873" vgrow="SOMETIMES" />
            </rowConstraints>
             <children>
@@ -101,7 +102,7 @@
                      <Insets left="5.0" />
                   </padding>
                </Label>
-               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Password" GridPane.rowIndex="7">
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Password" GridPane.rowIndex="8">
                   <font>
                      <Font size="24.0" />
                   </font>
@@ -109,7 +110,7 @@
                      <Insets left="5.0" />
                   </padding>
                </Label>
-               <MFXPasswordField fx:id="password" alignment="TOP_LEFT" floatMode="DISABLED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <MFXPasswordField fx:id="password" alignment="TOP_LEFT" floatMode="DISABLED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.valignment="CENTER">
                   <font>
                      <Font size="20.0" />
                   </font>
@@ -142,7 +143,7 @@
                      <Insets left="5.0" />
                   </padding>
                </Label>
-               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Email" GridPane.rowIndex="6">
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Email" GridPane.rowIndex="7">
                   <font>
                      <Font size="24.0" />
                   </font>
@@ -150,7 +151,7 @@
                      <Insets left="5.0" />
                   </padding>
                </Label>
-               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Date of Birth" GridPane.rowIndex="5">
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Date of Birth" GridPane.rowIndex="6">
                   <font>
                      <Font size="24.0" />
                   </font>
@@ -174,7 +175,7 @@
                      <Insets left="5.0" />
                   </padding>
                </Label>
-               <Label fx:id="dateOfBirth" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <Label fx:id="dateOfBirth" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="6">
                   <font>
                      <Font size="24.0" />
                   </font>
@@ -206,7 +207,23 @@
                      <Insets left="5.0" />
                   </padding>
                </Label>
-               <Label fx:id="email" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <Label fx:id="email" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Gender" GridPane.rowIndex="5">
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+               </Label>
+               <Label fx:id="gender" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5">
                   <font>
                      <Font size="24.0" />
                   </font>
